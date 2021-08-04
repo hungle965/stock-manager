@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx nodemon back-end/index.js -w server"
+    "server": "npx nodemon server/index.js -w server",
+    "client": "npm run start --prefix stock-client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,7 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "concurrently": "^6.2.0",
     "nodemon": "^2.0.12"
   }
 }
